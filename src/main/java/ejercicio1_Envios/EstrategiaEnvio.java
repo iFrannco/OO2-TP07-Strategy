@@ -1,5 +1,11 @@
 package ejercicio1_Envios;
 
-public interface EstrategiaEnvio {
-    float calcularCostoEnvio(String destino, float pesoProductos);
+public abstract class EstrategiaEnvio {
+    protected String origen;
+
+    public EstrategiaEnvio(String origen) {
+        this.origen = origen;
+    }
+
+    abstract float calcularCostoEnvio(String destino, float pesoProductos);
 }

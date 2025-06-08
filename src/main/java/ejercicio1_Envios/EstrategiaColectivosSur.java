@@ -1,6 +1,11 @@
 package ejercicio1_Envios;
 
-public class EstrategiaColectivosSur implements EstrategiaEnvio {
+public class EstrategiaColectivosSur extends EstrategiaEnvio {
+
+    public EstrategiaColectivosSur(String origen) {
+        super(origen);
+    }
+
     @Override
     public float calcularCostoEnvio(String destino, float pesoProductos) {
         float costoTotal = 0;

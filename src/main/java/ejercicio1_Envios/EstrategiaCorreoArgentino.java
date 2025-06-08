@@ -1,10 +1,11 @@
 package ejercicio1_Envios;
 
-public class EstrategiaCorreoArgentino implements EstrategiaEnvio {
+public class EstrategiaCorreoArgentino extends EstrategiaEnvio {
     private static final float COSTO_POR_KM = 5;
     private CalculadorDistancia calculadorDistanciaKM;
 
-    public EstrategiaCorreoArgentino(CalculadorDistancia calculadorDistanciaKM) {
+    public EstrategiaCorreoArgentino(String origen, CalculadorDistancia calculadorDistanciaKM) {
+        super(origen);
         this.calculadorDistanciaKM = calculadorDistanciaKM;
     }
 
@@ -15,7 +16,7 @@ public class EstrategiaCorreoArgentino implements EstrategiaEnvio {
             costoTotal = 500;
         } else {
             costoTotal = 800;
-            int distanciaEnKM = calculadorDistanciaKM.calcularDistancia(destino, "Capital Federal");
+            int distanciaEnKM = calculadorDistanciaKM.calcularDistancia(origen, destino);
             costoTotal += COSTO_POR_KM * distanciaEnKM;
         }
 
